@@ -1,0 +1,56 @@
+[
+    {
+      "nombre": "Chomba Azul",
+      "categoria_id":2,
+      "description": "Chomba azul talle M.",
+        "img": "imagen/chomba2.jpg",
+      "precio":13200,
+      "codigo":10214,
+      "stock":2,
+      "status":1,
+      "id": 1
+    },
+        {
+      "nombre": "Chomba Verde",
+      "categoria_id":2,
+      "description": "Chomba verde talle M.",
+       "img": "imagen/chomba4.jpg",
+      "precio":11000,
+      "codigo":10215,
+      "stock":2,
+      "status":1,
+      "id": 2
+    },    {
+      "nombre": "Chomba Roja",
+      "categoria_id":2,
+      "description": "Chomba roja talle M.",
+      "img": "imagen/chomba1.jpg",
+      "precio":10000,
+      "codigo":10213,
+      "stock":2,
+      "status":1,
+      "id": 3
+    },
+        {
+      "nombre": "Chomba Rayada",
+      "categoria_id":2,
+      "description": "Chomba rayada talle M.",
+      "img": "imagen/chomba2.jpg",
+      "precio":15000,
+      "codigo":10224,
+      "stock":2,
+      "status":1,
+      "id": 4
+    },
+        {
+      "nombre": "Chomba Azul/verde",
+      "categoria_id":2,
+      "description": "Chomba azul/verde talle M.",
+     "img": "imagen/chomba3.jpg",
+      "precio":12000,
+      "codigo":10144,
+      "stock":2,
+      "status":1,
+      "id": 5
+    }
+  ]
