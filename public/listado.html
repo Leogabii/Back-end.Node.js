@@ -1,0 +1,65 @@
+<!-- public/index.html. listar productos -->
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Productos</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1 class="mt-5">Productos</h1>
+        <a href="./create.html" class="btn btn-primary mb-3">Agregar Producto</a>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nombre</th>
+                    <th>Descripción</th>
+                    <th>Precio</th>
+                    <th>Imagen</th>
+                    <th>Código</th>
+                    <th>Stock</th>
+                    <th>Activo</th>
+                    <th>Categoría</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody id="product-list">
+                <!-- Aquí se cargarán los productos mediante JavaScript -->
+            </tbody>
+        </table>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="/js/scripts.js"></script>
+    <script>
+        async function deleteProduct(id) {
+            if (confirm('¿Estás seguro de que deseas eliminar este producto?')) {
+                try {
+                    const response = await fetch(`http://localhost:3000/api/products/${id}`, {
+                        method: 'DELETE',
+                        headers: {
+                            'Content-Type': 'application/json'
+                        }
+                    });
+                    if (response.ok) {
+                        alert('Producto eliminado exitosamente');
+                        // Redirige o actualiza la página después de eliminar
+                        location.reload();
+                    } else {
+                        alert('Error al eliminar el producto');
+                    }
+                } catch (error) {
+                    console.error('Error:', error);
+                    alert('Error al eliminar el producto');
+                }
+            }
+        }
+        </script>
+</body>
+</html>

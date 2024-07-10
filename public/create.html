@@ -1,0 +1,87 @@
+<!-- public create.html agrega producto -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Agregar Producto</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1 class="mt-5">Agregar Producto</h1>
+        <form id="productoForm">
+        	 <div class="form-group">
+                <label for="id">Id</label>
+                <input type="text" class="form-control" id="id" name="id" required>
+            </div>
+            <div class="form-group">
+                <label for="name">Nombre</label>
+                <input type="text" class="form-control" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="descripcion">Descripción</label>
+                <input type="text" class="form-control" id="descripcion" name="descripcion" required>
+            </div>
+            <div class="form-group">
+                <label for="precio">Precio</label>
+                <input type="number" class="form-control" id="precio" name="precio" step="0.01"  required>
+            </div>
+            <div class="form-group">
+                <label for="img">Imagen</label>
+                <input type="text" class="form-control" id="img" name="img"  required>
+            </div>
+            <div class="form-group">
+                <label for="codigo">Código</label>
+                <input type="number" class="form-control" id="codigo" name="codigo" >
+            </div>
+            <div class="form-group">
+                <label for="stock">Stock</label>
+                <input type="number" class="form-control" id="stock" name="stock" >
+            </div>
+            <div class="form-group">
+                <label for="activo">Activo</label>
+                <input type="checkbox" class="form-control" id="activo" name="activo" value="1">
+            </div>
+            <div class="form-group">
+                <label for="categoria_id">Categoría</label>
+                <input type="number" class="form-control" id="categoria_id" name="categoria_id" >
+            </div>
+            <button type="submit" class="btn btn-primary">Agregar</button>
+        </form>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="/js/scripts.js"></script>
+      <script>
+        document.getElementById('productoForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const id = document.getElementById('id').value;
+            const name = document.getElementById('name').value;
+            const descripcion = document.getElementById('descripcion').value;
+            const precio = document.getElementById('precio').value;
+            const img = document.getElementById('img').value;
+            const codigo = document.getElementById('codigo').value;
+            const stock = document.getElementById('stock').value;
+            const activo = document.getElementById('activo').value;
+            const categoria_id = document.getElementById('categoria_id').value;
+
+            fetch('/api/create', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ id, name, descripcion, precio, img, codigo, stock, activo, categoria_id })
+            })
+            .then(response => response.json())
+            .then(data => {
+                alert('Producto agregado exitosamente');
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
+        });
+    </script>
+</body>
+</html>

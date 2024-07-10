@@ -1,0 +1,9 @@
+public/css/styles.css
+
+body {
+    padding-top: 20px;
+}
+
+/*
+Con estos archivos HTML y el script JavaScript, tienes una maqueta completa para el CRUD de productos en tu tienda de ropa. La página principal (index.html) consumirá los datos del endpoint /products/list para listar los productos, y las demás páginas (create.html y edit.html) permitirán agregar y editar productos respectivamente.
+*/
