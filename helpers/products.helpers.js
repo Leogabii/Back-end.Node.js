@@ -1,4 +1,4 @@
-import Products from '../models/Product.js'
+import Products from '../models/product.js'
 
 export default class ProductsHelpers {
 
